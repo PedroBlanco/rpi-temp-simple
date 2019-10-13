@@ -3,7 +3,6 @@ version: '3.7'
 services:
   agent:
     image: busybox:latest
-    environment:
     volumes:
       - /sys:/sys:ro
     ports:
