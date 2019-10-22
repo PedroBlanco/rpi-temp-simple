@@ -1,3 +1,7 @@
 FROM busybox:latest
 
-CMD while true; do { echo -e 'HTTP/1.1 200 OK\r\n'; echo '{\"cpu_temp\":\"$(cat /sys/class/thermal/thermal_zone0/temp)\"}'; } | nc -l -p 8080; done; exit
+COPY web/index.html /WEB/
+COPY web/cgi-bin/temp.cgi /WEB/cgi-bin/
+
+CMD /bin/httpd -f -p 8080 -h /WEB ; ps
+
