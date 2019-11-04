@@ -93,9 +93,8 @@ body { background: #f2f2f2; }
 <h6><a href="https://github.com/PedroBlanco/rpi-temp-simple" target="_blank">PedroBlanco/rpi-temp-simple at gihub.com</a></h6>
 <script>
   $.getJSON( '/cgi-bin/temp.cgi', function( data ) {
-    var int_temp = (data.cpu_temp/1000).toFixed(0);
-    var dec_temp = ((data.cpu_temp/1000)+'').split('.')[1];
-    $('.deneme').html( int_temp + '<span>' + dec_temp + '</span>' + '<strong>&deg;</strong>');
+    var _temp = (data.cpu_temp/1000).toFixed(1).split('.');
+    $('.deneme').html( _temp[0] + '<span>' + _temp[1] + '</span>' + '<strong>&deg;</strong>');
   });
   
 </script>
