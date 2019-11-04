@@ -92,8 +92,6 @@ body { background: #f2f2f2; }
 </div>
 <h6><a href="https://github.com/PedroBlanco/rpi-temp-simple" target="_blank">PedroBlanco/rpi-temp-simple at gihub.com</a></h6>
 <script>
-  var temperature;
-  
   $.getJSON( '/cgi-bin/temp.cgi', function( data ) {
     var int_temp = (data.cpu_temp/1000).toFixed(0);
     var dec_temp = ((n/1000)+'').split('.')[1];
