@@ -95,7 +95,9 @@ body { background: #f2f2f2; }
   var temperature;
   
   $.getJSON( '/cgi-bin/temp.cgi', function( data ) {
-    $('.deneme').html( (data.cpu_temp/1000).toFixed(1) + '<strong>&deg;</strong>');
+    var int_temp = (data.cpu_temp/1000).toFixed(0);
+    var dec_temp = ((n/1000)+'').split('.')[1];
+    $('.deneme').html( int_temp + '<span>' + dec_temp + </span> + '<strong>&deg;</strong>');
   });
   
 </script>
