@@ -1,2 +1,2 @@
 # rpi-temp-simple
-Temperature in a minimal web server.
+show Raspberry Pi temperature in a minimal web server.
